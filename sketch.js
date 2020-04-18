@@ -185,12 +185,6 @@ function draw() {
     vertex(732, 600);
     vertex(800, 600);
     endShape();
-
-   forestAudio.play();
-  } 
-
- else {
-  forestAudio.stop();
 }
 
   //Beach
@@ -558,6 +552,15 @@ function draw() {
     vertex(690, 600);
     vertex(590, 600);
     endShape();
+  }
+}
+
+function mousePressed() {
+  if (forestAudio.isPlaying()) {
+    // .isPlaying() returns a boolean
+    forestAudio.stop();
+  } else {
+    forestAudio.play();
   }
 }
 
