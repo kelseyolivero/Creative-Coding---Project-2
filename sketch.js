@@ -2,7 +2,7 @@ var stars = [];
 let forestAudio; //variables for the sound
 
 function preLoad() {
-  forestAudio = loadSound("forest.mp3");
+  forestAudio = loadSound("audio/forest.mp3");
 }
 
 function setup() { 
@@ -185,6 +185,8 @@ function draw() {
     vertex(732, 600);
     vertex(800, 600);
     endShape();
+
+
   }
 
   //Beach
