@@ -558,7 +558,7 @@ function draw() {
 
 function mousePressed() {
   if (keyCode === 70) {
-    forestAudio.stop(); //stops
+    forestAudio.play(); //stops
 
   } else {
     forestAudio.stop(); //stops
