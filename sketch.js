@@ -187,12 +187,12 @@ function draw() {
     endShape();
   }
 
-    //creates the sound for the spring and checks that it is plaing only when the mouse is in the square
-    if (!forestAudio.isPlaying()){ 
-      forestAudio.play();
+//ceates the sound for the spring and checks that it is plaing only when the mouse is in the square
+    if (forestAudio.isPlaying()){ 
+      forestAudio.stop();
     }
     else {
-  forestAudio.stop();
+  forestAudio.play();
     
 } 
 
