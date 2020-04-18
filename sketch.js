@@ -561,7 +561,7 @@ function mousePressed() {
     forestAudio.stop(); //stops
 
   } else {
-    forestAudio.play(); //stops
+    forestAudio.stop(); //stops
   }
 }
 
