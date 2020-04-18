@@ -2,12 +2,14 @@ var stars = [];
 let forestAudio, beachAudio, cityAudio; //variables for the sound
 
 
-function setup() { 
-  createCanvas(800, 600);
-
+function preload() { //function that loads the sounds into the webtoy
   forestAudio = loadSound("audio/forest.mp3");
   beachAudio = loadSound("audio/beach.mp3");
   cityAudio = loadSound("audio/city.mp3");
+}
+
+function setup() { 
+  createCanvas(800, 600);
 
 	for (var i = 0; i < 200; i++) {
 		stars[i] = new Star();
