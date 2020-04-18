@@ -1,14 +1,14 @@
 var stars = [];
-let forestAudio, beachAudio, cityAudio; //variables for the sound
+let forestAudio; //variables for the sound
 
+function preLoad() {
+  soundFormats("mp3");
+  forestAudio = loadSound("audio/forest.mp3");
+}
 
 function setup() { 
-  createCanvas(800, 600);
-
-  forestAudio = loadSound("audio/forest.mp3");
-  beachAudio = loadSound("audio/beach.mp3");
-  cityAudio = loadSound("audio/city.mp3");
-
+  let cnv = createCanvas(800, 600);
+  cnv.mousePressed(canvasPressed);
 	for (var i = 0; i < 200; i++) {
 		stars[i] = new Star();
 	}
@@ -186,16 +186,6 @@ function draw() {
     vertex(800, 600);
     endShape();
   }
-
-//ceates the sound for the spring and checks that it is plaing only when the mouse is in the square
-    if (forestAudio.isPlaying()){ 
-      forestAudio.stop();
-    }
-    else {
-  forestAudio.play();
-    
-} 
-
 
   //Beach
   if (keyCode === 66) {
@@ -565,6 +555,11 @@ function draw() {
   }
 }
 
+function canvasPressed() {
+  // playing a sound file on a user gesture
+  // is equivalent to `userStartAudio()`
+  forestAudio.play();
+}
 
 class Star {
 	constructor() {
