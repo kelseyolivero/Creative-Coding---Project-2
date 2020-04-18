@@ -185,15 +185,7 @@ function draw() {
     vertex(732, 600);
     vertex(800, 600);
     endShape();
-
-    forestAudio.play(); //stops
   } 
-
-  else {
-    forestAudio.stop(); //stops
-  }
-
-
 
   //Beach
   if (keyCode === 66) {
@@ -563,7 +555,14 @@ function draw() {
   }
 }
 
+function mousePressed() {
+  if (keyCode === 70) {
+    forestAudio.play(); //stops
 
+  } else {
+    forestAudio.stop(); //stops
+  }
+}
 
 class Star {
 	constructor() {
