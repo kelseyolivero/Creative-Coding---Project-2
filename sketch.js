@@ -185,6 +185,15 @@ function draw() {
     vertex(732, 600);
     vertex(800, 600);
     endShape();
+
+    //creates the sound for the spring and checks that it is plaing only when the mouse is in the square
+    if (!forestAudio.isPlaying()){ 
+      forestAudio.loop();
+    }
+    
+} else {
+  forestAudio.stop();
+
 }
 
   //Beach
@@ -555,14 +564,6 @@ function draw() {
   }
 }
 
-function mousePressed() {
-  if (forestAudio.isPlaying()) {
-    // .isPlaying() returns a boolean
-    forestAudio.stop();
-  } else {
-    forestAudio.play();
-  }
-}
 
 class Star {
 	constructor() {
