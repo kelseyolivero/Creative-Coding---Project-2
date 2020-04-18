@@ -186,17 +186,12 @@ function draw() {
     vertex(800, 600);
     endShape();
 
-    function mousePressed() {
-      if (song.isPlaying()) {
-        // .isPlaying() returns a boolean
-        song.stop();
-        background(255, 0, 0);
-      } else {
-        song.play();
-        background(0, 255, 0);
-      }
-    }
+   forestAudio.play();
   } 
+
+ else {
+  forestAudio.stop();
+}
 
   //Beach
   if (keyCode === 66) {
