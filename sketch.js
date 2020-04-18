@@ -195,6 +195,7 @@ function draw() {
   forestAudio.stop();
 } 
 
+
   //Beach
   if (keyCode === 66) {
     //Sky
