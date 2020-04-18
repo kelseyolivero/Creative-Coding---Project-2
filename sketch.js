@@ -2,13 +2,12 @@ var stars = [];
 let forestAudio; //variables for the sound
 
 function preLoad() {
-  soundFormats("mp3");
+  soundFormats("mp3", "ogg");
   forestAudio = loadSound("audio/forest.mp3");
 }
 
 function setup() { 
-  let cnv = createCanvas(800, 600);
-  cnv.mousePressed(canvasPressed);
+  createCanvas(800, 600);
 	for (var i = 0; i < 200; i++) {
 		stars[i] = new Star();
 	}
@@ -185,6 +184,8 @@ function draw() {
     vertex(732, 600);
     vertex(800, 600);
     endShape();
+
+    forestAudio.play();
   }
 
   //Beach
@@ -553,12 +554,6 @@ function draw() {
     vertex(590, 600);
     endShape();
   }
-}
-
-function canvasPressed() {
-  // playing a sound file on a user gesture
-  // is equivalent to `userStartAudio()`
-  forestAudio.play();
 }
 
 class Star {
