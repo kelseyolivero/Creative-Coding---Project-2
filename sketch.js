@@ -185,16 +185,15 @@ function draw() {
     vertex(732, 600);
     vertex(800, 600);
     endShape();
+  }
 
     //creates the sound for the spring and checks that it is plaing only when the mouse is in the square
     if (!forestAudio.isPlaying()){ 
       forestAudio.loop();
     }
-    
-} else {
+    else {
   forestAudio.stop();
-
-}
+} 
 
   //Beach
   if (keyCode === 66) {
