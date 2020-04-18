@@ -1,7 +1,13 @@
 var stars = [];
+let forestAudio, beachAudio, cityAudio; //variables for the sound
+
 
 function setup() { 
   createCanvas(800, 600);
+
+  forestAudio = loadSound("audio/forest.mp3");
+  beachAudio = loadSound("audio/beach.mp3");
+  cityAudio = loadSound("audio/city.mp3");
 
 	for (var i = 0; i < 200; i++) {
 		stars[i] = new Star();
@@ -547,6 +553,15 @@ function draw() {
     vertex(690, 600);
     vertex(590, 600);
     endShape();
+  }
+}
+
+function mousePressed() {
+  if (keyCode === 70) {
+    forestAudio.stop(); //stops
+
+  } else {
+    forestAudio.play(); //stops
   }
 }
 
