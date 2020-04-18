@@ -2,14 +2,12 @@ var stars = [];
 let forestAudio, beachAudio, cityAudio; //variables for the sound
 
 
-function preload() { //function that loads the sounds into the webtoy
+function setup() { 
+  createCanvas(800, 600);
+
   forestAudio = loadSound("audio/forest.mp3");
   beachAudio = loadSound("audio/beach.mp3");
   cityAudio = loadSound("audio/city.mp3");
-}
-
-function setup() { 
-  createCanvas(800, 600);
 
 	for (var i = 0; i < 200; i++) {
 		stars[i] = new Star();
@@ -187,6 +185,17 @@ function draw() {
     vertex(732, 600);
     vertex(800, 600);
     endShape();
+
+    function mousePressed() {
+      if (song.isPlaying()) {
+        // .isPlaying() returns a boolean
+        song.stop();
+        background(255, 0, 0);
+      } else {
+        song.play();
+        background(0, 255, 0);
+      }
+    }
   } 
 
   //Beach
@@ -554,15 +563,6 @@ function draw() {
     vertex(690, 600);
     vertex(590, 600);
     endShape();
-  }
-}
-
-function mousePressed() {
-  if (keyCode === 70) {
-    forestAudio.play(); //stops
-
-  } else {
-    forestAudio.stop(); //stops
   }
 }
 
